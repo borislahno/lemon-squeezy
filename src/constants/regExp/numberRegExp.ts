@@ -1,0 +1,1 @@
+export const NUMBER_REGEXP = /^[0-9]\d*(\.\d+)?$/g;

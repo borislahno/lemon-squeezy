@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px #201B38 inset !important;
+  -moz-box-shadow: 0 0 0 30px #201B38 inset !important;
+  -o-box-shadow: 0 0 0 30px #201B38 inset !important;
+  box-shadow: 0 0 0 30px #201B38 inset !important;
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@layer base {
+  *, *:focus, *:active {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  html {
+    @apply flex flex-col min-h-[100vh] font-Inter text-base antialiased scroll-smooth;
+
+  }
+
+  body {
+    @apply flex flex-col flex-auto h-full min-w-[375px] text-base text-black antialiased scroll-smooth;
+  }
+}
+
+@layer components {
+  .loader {
+    stroke-dasharray: 163 164;
+    stroke-dashoffset: 80;
+    fill: transparent;
+  }
+
+  .heading-primary {
+    @apply text-2xlg font-medium text-black-300;
+  }
+
+  .heading-secondary {
+    @apply mb-[4px] text-sm font-medium text-black-300;
+  }
+
+  .text {
+    @apply text-sm text-grey-500;
+  }
+
+  .form-input {
+    @apply w-full py-[8px] px-[16px] rounded-md shadow-[inset_0_0_0_1px_#0a0a2e29,0_1px_1px_0_#0a0a0b0f]
+    text-sm font-normal text-black-300 placeholder:text-grey focus:outline-0 focus:shadow-[inset_0_0_0_2px_#7047eb];
+  }
+
+  .form-input-error {
+    @apply shadow-[inset_0_0_0_1px_#F53D6B];
+  }
+
+  .dropdown-link {
+    @apply flex items-center gap-[12px] w-full h-[32px] px-[16px] text-sm font-normal text-black-300 hover:bg-grey-50 [&>svg]:text-grey-300;
+  }
+
+  .list-box-scroll-bar::-webkit-scrollbar {
+    @apply w-[4px];
+  }
+
+  .list-box-scroll-bar::-webkit-scrollbar-thumb {
+    @apply rounded-[2rem] bg-grey-100;
+  }
+}
+
+@layer utilities {
+  .adaptive-image {
+    @apply absolute top-0 left-0 w-full h-full object-cover;
+  }
+
+  .dropdown-shadow {
+    @apply shadow-[0_0_0_1px_#1212171a,0_24px_48px_0_#12121708,0_10px_18px_0_#12121708,0_5px_8px_0_#1212170a,0_2px_4px_0_#1212170a]
+  }
+}
